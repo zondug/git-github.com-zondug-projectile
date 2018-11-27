@@ -14,6 +14,7 @@
 		EEFA7AA521AC808F007A08E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFA7AA321AC808F007A08E7 /* LaunchScreen.storyboard */; };
 		EEFA7AB021AC808F007A08E7 /* projectileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7AAF21AC808F007A08E7 /* projectileTests.swift */; };
 		EEFA7ABB21AC808F007A08E7 /* projectileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ABA21AC808F007A08E7 /* projectileUITests.swift */; };
+		EEFA7ACF21AD2B18007A08E7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA7ACE21AD2B18007A08E7 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		EEFA7AB621AC808F007A08E7 /* projectileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFA7ABA21AC808F007A08E7 /* projectileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectileUITests.swift; sourceTree = "<group>"; };
 		EEFA7ABC21AC808F007A08E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEFA7ACE21AD2B18007A08E7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				EEFA7A9A21AC808D007A08E7 /* AppDelegate.swift */,
 				EEFA7A9C21AC808D007A08E7 /* ViewController.swift */,
+				EEFA7ACE21AD2B18007A08E7 /* CircleView.swift */,
 				EEFA7A9E21AC808D007A08E7 /* Main.storyboard */,
 				EEFA7AA121AC808F007A08E7 /* Assets.xcassets */,
 				EEFA7AA321AC808F007A08E7 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFA7ACF21AD2B18007A08E7 /* CircleView.swift in Sources */,
 				EEFA7A9D21AC808D007A08E7 /* ViewController.swift in Sources */,
 				EEFA7A9B21AC808D007A08E7 /* AppDelegate.swift in Sources */,
 			);
