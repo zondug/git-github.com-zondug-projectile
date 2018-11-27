@@ -11,7 +11,7 @@ import UIKit
 /// VC에 올라와 있는 사각형 뷰 전체에 대한 클래스
 class CircleView: UIView {
     
-    var currentangle: Int = 0 {
+    var currentangle: CGFloat = 0 {
         didSet {
             setNeedsDisplay()
         }
@@ -22,24 +22,27 @@ class CircleView: UIView {
     ///
     /// draw 안에서만 그려야 한다.
     override func draw(_ rect: CGRect) {
-    
         drawcircles()
-
     }
 
     func drawcircles() {
         
-        let center = self.bounds.width/2
+        let width = self.bounds.width
+        let height = self.bounds.height
+        let center = width/2
         let strokeWidth: CGFloat = 1
-        let radius: CGFloat =  center - (strokeWidth/2)
+        let radius: CGFloat = width/2 - 1
         
-        let circlePath = UIBezierPath(
-            arcCenter: CGPoint(x: center, y: center),
-            radius: radius,
-            startAngle: CGFloat(0),
-            endAngle: CGFloat(Double.pi * 2),
-            clockwise: true)
-        
+        let circlePath = UIBezierPath()
+        circlePath.move(to: CGPoint(x: width-1, y: height/2))
+
+//        inclease angle in range stride
+        for angle in stride(from: 0.0, to: 360, by: 0.1) {
+            let x = CGFloat(cos(angle)) * radius + center
+            let y = CGFloat(sin(angle)) * radius + center
+            circlePath.addLine(to: CGPoint(x: x, y: y))
+        }
+
         let circle = CAShapeLayer()
         circle.path = circlePath.cgPath
         
@@ -52,21 +55,20 @@ class CircleView: UIView {
         let circlepointx = CGFloat(center + center * cos(CGFloat(currentangle)))
         let circlepointy = CGFloat(center + center * sin(CGFloat(currentangle)))
         
-        let circlepointstroke: CGFloat = 5
-        
         let circlePointPath = UIBezierPath(
             arcCenter: CGPoint(x: circlepointx, y: circlepointy),
             radius: 1,
             startAngle: 0,
-            endAngle: CGFloat(currentangle),
+            endAngle: 2 * .pi ,
             clockwise: true)
+        print(circlepointx, " ,", circlepointy)
         
         let circlepoint = CAShapeLayer()
         circlepoint.path = circlePointPath.cgPath
         
         circlepoint.fillColor = UIColor.red.cgColor
         circlepoint.strokeColor = UIColor.red.cgColor
-        circlepoint.lineWidth = circlepointstroke
+        circlepoint.lineWidth = strokeWidth * 5
         
         layer.addSublayer(circlepoint)
         setNeedsDisplay()

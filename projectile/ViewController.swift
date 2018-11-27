@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBAction func sliderValue(_ sender: UISlider) {
         let sliderCurrentValue = Int(sender.value)
         
-        circleview.currentangle = sliderCurrentValue
+        circleview.currentangle = CGFloat(sliderCurrentValue)
         
         currentAngleLabel.text = "\(sliderCurrentValue)"
         setNeedsFocusUpdate()
